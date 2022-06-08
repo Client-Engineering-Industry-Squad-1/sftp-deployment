@@ -10,5 +10,5 @@ spec:
     name: sftp-svc
     weight: 100
   port:
-    targetPort: "99"
+    targetPort: "22"
   wildcardPolicy: None

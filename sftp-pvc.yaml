@@ -4,6 +4,9 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "275"
   name: sftp-pvc
+  namespace: sftp
+  labels:
+    sftp: 'sftp'
 spec:
   accessModes:
     - ReadWriteMany

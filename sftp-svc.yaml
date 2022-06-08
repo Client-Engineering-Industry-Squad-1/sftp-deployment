@@ -8,10 +8,10 @@ metadata:
 spec:
   type: "LoadBalancer"
   ports:
-  - name: "99"
+  - name: "22"
     # don't use the default part, to allow the machine this runs on to be accessed using ssh
-    port: 99
-    targetPort: 99
+    port: 22
+    targetPort: 22
   selector:
     app: sftp
 status:
