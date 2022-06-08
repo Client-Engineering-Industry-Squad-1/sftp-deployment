@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "290"
+  name: sftp
+  namespace: sftp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sftp
+  template:
+    metadata:
+      labels:
+        app: sftp
+    spec:
+      containers:
+      - name: sftp
+        image: quay.io/ibmtechgarage/sftp:1.0.0 
+        args: ["foo:123:1001:100:upload"]         
+        # command: ["/bin/bash", "mkdir upload"]
+        # ports:
+        #   - containerPort: 2020
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: sftp-etc-sftp
+      volumes:
+      - name: sftp-pvc
+        persistentVolumeClaim:
+          claimName: sftp-pvc
+  backoffLimit: 2
