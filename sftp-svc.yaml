@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: sftp-svc
+  namespace: sftp
+  labels:
+    environment: production
+spec:
+  type: "LoadBalancer"
+  ports:
+  - name: "99"
+    # don't use the default part, to allow the machine this runs on to be accessed using ssh
+    port: 99
+    targetPort: 99
+  selector:
+    app: sftp
+status:
+  loadBalancer: {}

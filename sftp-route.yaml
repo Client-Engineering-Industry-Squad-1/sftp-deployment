@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: sftp-route
+  namespace: sftp
+spec:
+  host: sftp.apps.pawaro.eastus.aroapp.io
+  to:
+    kind: Service
+    name: sftp-svc
+    weight: 100
+  port:
+    targetPort: "99"
+  wildcardPolicy: None
