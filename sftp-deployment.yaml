@@ -16,6 +16,8 @@ spec:
         app: sftp
     spec:
       containers:
+      configMapRef:
+        name: sftp-etc-sftp
       - name: sftp
         image: quay.io/ibmtechgarage/sftp:1.0.0 
         imagePullPolicy: Always
