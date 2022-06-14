@@ -16,19 +16,13 @@ spec:
         app: sftp
     spec:
       containers:
-      configMapRef:
-        name: sftp-etc-sftp
       - name: sftp
         image: quay.io/ibmtechgarage/sftp:1.0.0 
         imagePullPolicy: Always
         args: ["foo:123:1001:100:upload", "bar:abc:1002:100:upload", "baz:xyz:1003:100:upload"]         
-        # command: ["/bin/bash", "mkdir upload"]
-        # ports:
-        #   - containerPort: 2020
-
-        # envFrom:
-        #   - configMapRef:
-        #       name: sftp-etc-sftp
+        envFrom:
+          - configMapRef:
+              name: sftp-etc-sftp
       volumes:
       - name: sftp-pvc
         persistentVolumeClaim:
