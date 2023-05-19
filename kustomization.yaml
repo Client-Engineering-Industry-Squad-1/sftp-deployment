@@ -1,0 +1,6 @@
+resources:
+- deployment/sftp-deployment.yaml
+- storage/sftp-pvc.yaml
+- service/sftp-svc.yaml
+- route/sftp-route.yaml
+- role/sftp-etc-sftp.yaml

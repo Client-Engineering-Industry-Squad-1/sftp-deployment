@@ -2,9 +2,9 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "275"
+    argocd.argoproj.io/sync-wave: "220"
   name: sftp-pvc
-  namespace: sftp
+  namespace: b2bi-prod
   labels:
     sftp: 'sftp'
 spec:

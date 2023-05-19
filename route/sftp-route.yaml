@@ -2,7 +2,9 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: sftp-route
-  namespace: sftp
+  namespace: b2bi-prod
+  annotations:
+    argocd.argoproj.io/sync-wave: "280"
 spec:
   host: sftp.apps.pawaro.eastus.aroapp.io
   to:

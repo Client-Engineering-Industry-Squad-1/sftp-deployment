@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "290"
+    argocd.argoproj.io/sync-wave: "250"
   name: sftp
-  namespace: sftp
+  namespace: b2bi-prod
 spec:
   replicas: 1
   selector:

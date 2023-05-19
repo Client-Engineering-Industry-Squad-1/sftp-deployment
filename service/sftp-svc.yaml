@@ -2,9 +2,9 @@ kind: Service
 apiVersion: v1
 metadata:
   name: sftp-svc
-  namespace: sftp
-  labels:
-    environment: production
+  namespace: b2bi-prod
+  annotations:
+    argocd.argoproj.io/sync-wave: "270"
 spec:
   type: "LoadBalancer"
   ports:
@@ -14,5 +14,3 @@ spec:
     targetPort: 22
   selector:
     app: sftp
-status:
-  loadBalancer: {}
